@@ -6,7 +6,7 @@
         // 1. Write a method that prints all numbers from 1000 down to -1000 to the console.
         //    - Method Signature: void PrintNumbers()
 
-        public static void PrintNumbers1000()
+        public static void PrintNumbers()
         {
             for (int i = 1000; i >= -1000; i--)
             {
@@ -43,7 +43,7 @@
         //    - Method Signature: bool IsEven(int number)
         //    - Returns true if the number is even, false if odd.
 
-        public static void EvenOrOdd(int number)
+        public static void IsEven(int number)
         {
             if (number % 2 == 0)
             {
@@ -139,10 +139,10 @@
         // Use various test cases to ensure they work as expected.        
         static void Main(string[] args)
         {
-            PrintNumbers1000();
+            PrintNumbers();
             PrintEveryThirdNumber();
             AreNumbersEqual(0, 10);
-            EvenOrOdd(5);
+            IsEven(5);
             IsPositive(0);
             CanVote();
             IsInRange();
