@@ -1,4 +1,6 @@
-﻿namespace IterationStatements
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace IterationStatements
 {
     public class Program
     {
@@ -28,50 +30,57 @@
         //    - Method Signature: bool AreNumbersEqual(int num1, int num2)
         //    - Returns true if the numbers are equal, false otherwise.
 
-        public static void AreNumbersEqual(int num1, int num2)
+        public static bool AreNumbersEqual(int num1, int num2)
         {
-            if (num1 == num2)
+             if (num1 == num2)
             {
                 Console.WriteLine($"{num1} is equal to {num2}");
+                return true;
             }
             else
             {
                 Console.WriteLine($"{num1} is not equal to {num2}");
             }
+            return false;
         }
         // 4. Write a method that checks if a given number is even or odd.
         //    - Method Signature: bool IsEven(int number)
         //    - Returns true if the number is even, false if odd.
 
-        public static void IsEven(int number)
+        public static bool IsEven(int number)
         {
             if (number % 2 == 0)
             {
                 Console.WriteLine($"{number} is even");
+                return true;           
             }
             else
             {
-                Console.WriteLine($"{number} is odd");           
+                Console.WriteLine($"{number} is odd");
+                return false;           
             }
         }
         // 5. Write a method that checks if a given number is positive or negative.
         //    - Method Signature: bool IsPositive(int number)
         //    - Returns true if the number is positive, false if negative.
 
-        public static void IsPositive(int number)
+        public static bool IsPositive(int number)
         {
             if (number > 0)
             {
                 Console.WriteLine("Positive");
+                return true;
             }
 
             else if (number == 0)
             {
-                Console.WriteLine("The number is zero");           
+                Console.WriteLine("The number is zero");
+                return false;
             }
             else
             {
                 Console.WriteLine("Negative");
+                return false;
             }
         }
         // 6. Write a method that reads the age of a candidate and determines if they are eligible to vote.
@@ -79,7 +88,7 @@
         //    - Returns true if the candidate can vote, false otherwise.
         //    - Hint: Use `int.Parse()` or the safer `int.TryParse()` for extra practice in handling user input.
 
-        public static void CanVote()
+        public static bool CanVote(int age)
         {
             Console.WriteLine("Enter your age");
             var canParse = int.TryParse(Console.ReadLine(), out int userAge);
@@ -93,10 +102,12 @@
             if (userAge >= 18)
             {
                 Console.WriteLine("You can vote");
+                return true;
             }
             else
             {
                 Console.WriteLine("You can't vote");
+                return false;
             }
         }
         // Heatin' Up Section:
@@ -104,7 +115,7 @@
         //    - Method Signature: bool IsInRange(int number)
         //    - Returns true if the number is within the range, false otherwise.
 
-        public static void IsInRange()
+        public static bool IsInRange()
         {
             Console.WriteLine("Enter a number");
             var canParse = int.TryParse(Console.ReadLine(), out var userNumber);
@@ -114,15 +125,21 @@
                 Console.WriteLine("Please enter a valid number");
                 canParse = int.TryParse(Console.ReadLine(), out userNumber);
             }
+            
             if (userNumber >= -10 && userNumber <= 10)
             {
                 Console.WriteLine("The number is within the range");
+                return true;
             }
             else
             {
                 Console.WriteLine("The number is not within the range");
+                return false;
             }
         }
+
+        
+        
         
         // 2. Write a method that displays the multiplication table (from 1 to 12) for a given integer.
         //    - Method Signature: void DisplayMultiplicationTable(int number)
@@ -144,7 +161,7 @@
             AreNumbersEqual(0, 10);
             IsEven(5);
             IsPositive(0);
-            CanVote();
+            CanVote(29);
             IsInRange();
             DisplayMultiplicationTable(5);
         }
