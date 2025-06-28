@@ -115,7 +115,7 @@ namespace IterationStatements
         //    - Method Signature: bool IsInRange(int number)
         //    - Returns true if the number is within the range, false otherwise.
 
-        public static bool IsInRange()
+        public static bool IsInRange(int number)
         {
             Console.WriteLine("Enter a number");
             var canParse = int.TryParse(Console.ReadLine(), out var userNumber);
@@ -162,7 +162,7 @@ namespace IterationStatements
             IsEven(5);
             IsPositive(0);
             CanVote(29);
-            IsInRange();
+            IsInRange(-8);
             DisplayMultiplicationTable(5);
         }
     }
